@@ -7,13 +7,15 @@ abanjade@jacobs-university.de
 
 #include<iostream>
 
-template<class T, int intialsize = 10>
+template<class T>
 class Stack
 {
     T * pointer; //Points to the start of the element.//
     int size; //number of elements//
-    int last_free_position;
-    void extend();
+
+    //Basically points to the last in element//
+    int last_non_free_position;
+    //void extend();
     public:
         Stack();
         Stack(const Stack& );
@@ -25,3 +27,5 @@ class Stack
         ~Stack();
 
 };
+
+#include"Stack.cpp"

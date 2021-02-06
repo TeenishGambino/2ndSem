@@ -5,27 +5,27 @@ Abiral Banjade
 abanjade@jacobs-university.de
 */
 
-#include "Stack.h"
+//#include "Stack.h"
 
-template<class T, int initalsize>
-Stack<T,initalsize>::Stack()
+template<class T>
+Stack<T>::Stack()
 {
-    pointer = new T[initalsize];
-    size = initalsize;
-    last_free_position = -1;
+    this->size = 10;
+    pointer = new T[size];
+    last_non_free_position = -1;
 }
 
-template<class T, int intialsize>
-Stack<T, intialsize>::~Stack()
+template<class T>
+Stack<T>::~Stack()
 {
     delete[] pointer;
 }
 
-template<class T, int intialsize>
-Stack<T, intialsize>::Stack(const &obj)
+template<class T>
+Stack<T>::Stack(const Stack &obj)
 {
     size = obj.size;
-    last_free_position = obj.last_free_position;
+    last_non_free_position = obj.last_non_free_position;
 
     //deep copy//
     pointer = new T[size];
@@ -35,27 +35,48 @@ Stack<T, intialsize>::Stack(const &obj)
     }
 }
 
-template<class T, int intialsize>
-Stack<T, intialsize>::Stack(int size)
+template<class T>
+Stack<T>::Stack(int size)
 {
     this->size = size;
     pointer = new T[this->size];
-    last_free_position = -1;
+    last_non_free_position = -1;
 }
 
-template<class T, int initialsize>
-Stack<T, initialsize>::~Stack()
+template<class T>
+bool Stack<T>::push (T element)
 {
-	delete[] pointer;
-} 
-
-template<class T, int initialsize>
-bool Stack<T, initialsize>::push (T element)
-{
-    if (last_free_position; + 1 == size)
+    if (last_non_free_position+1 == size)
     {
-        extend();	
+        return false;	
     }
-	last_free_position++;				// and insert the element 
-	pointer[last_free_position] = element;
+	last_non_free_position++;				// and insert the element 
+	pointer[last_non_free_position] = element;
+    return true;
+}
+
+template<class T>
+bool Stack<T>::pop(T& out)
+{
+    if (last_non_free_position == -1)
+    {
+        return false;
+    }
+
+    out = pointer[last_non_free_position];
+    last_non_free_position--;
+
+    return true;
+}
+
+template<class T>
+T Stack<T>::back(void)
+{
+    return pointer[last_non_free_position];
+}
+
+template<class T>
+int Stack<T>::getNumEntries()
+{
+    return last_non_free_position+1;
 }
