@@ -51,11 +51,17 @@ int main(void)
     position = array_search(c_data, size, 'o');
     cout<<"In char the position is: "<<position<<endl;
     
+    //For String//
+    string s_data[] = {string("King"), string("Queen"), string("Rook"), string("Bishop"), string("Horse"), string("Pawn")}
+    size = 6;
+    position = array_search(s_data, size, string("Bishop"));
+    cout<<"In string the position is: "<<position<<endl; 
+    
     //For Complex//
     Complex com_data[] = {Complex(1,-2), Complex(1,-1), Complex(6,9), Complex(-3,5)};
     size = sizeof(com_data)/sizeof(com_data[0]);
     position = array_search(com_data, size, Complex(1,-1));
-    cout<<"In char the position is: "<<position<<endl; 
+    cout<<"In Complex the position is: "<<position<<endl; 
 
     return 0;
 }
