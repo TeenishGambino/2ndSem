@@ -1,7 +1,6 @@
-
 /*
 CH-231-A
-a1_p1.h
+a1_p1.cpp
 Abiral Banjade
 abanjade@jacobs-university.de
 */
@@ -62,61 +61,24 @@ void Complex::print()
     cout<<showpos<<imag<<"i"<<endl;
 }
 
-//Adding//
-Complex Complex::add(Complex value1)
-{
-    Complex temp;
-    temp.real = real + value1.real;
-    temp.imag = imag + value1.imag;
-
-    return temp;
-}
-
-//Substracting//
-Complex Complex::sub(Complex value1)
-{
-    Complex temp;
-    temp.real = real - value1.real;
-    temp.imag = imag - value1.imag;
-
-    return temp;
-}
-
-//Multiply//
-Complex Complex::mult(Complex value1)
-{
-    Complex temp;
-    temp.real = real*value1.real - imag*value1.imag;
-    temp.imag = imag*value1.real + real*value1.imag;
-    return temp;
-}
-
-//Conjugate//
-Complex Complex::conjugate()
-{
-    Complex temp;
-    temp.real = getReal();
-    temp.imag = -imag;
-
-    return temp;
-}
-
 //Destructor//
-
 Complex::~Complex()
 {
     //cout<<"Destructor"<<endl;
 }
 
+//This is used to compare the complexs//
 bool Complex::operator == (Complex const &obj)
-        {
-            if ((real == obj.real)&&(imag == obj.imag))
-            {
-                return true;
-            }
-            else
-            {
-                return false;
-            }
-        }
+{
+    //Returns true when both real and obj
+    //are the same//
+    if ((real == obj.real)&&(imag == obj.imag))
+    {
+        return true;
+    }
+    else
+    {
+        return false;
+    }
+}
 

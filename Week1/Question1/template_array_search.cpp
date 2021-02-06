@@ -1,19 +1,20 @@
+/*
+CH-231-A
+a1_p1.cpp
+Abiral Banjade
+abanjade@jacobs-university.de
+*/
 #include<iostream>
 #include<string>
 #include"Complex.h"
-#include<vector>
 
 using namespace std;
 
+//This is the template function//
 template<typename T>
 int array_search(T arr[], int number_of_elements, T item_to_find)
 {
-    /*Try using this later
-    for(int i : arr)
-    {
-        if()
-    }
-    */ 
+    //Compares each element in the array//
    for (int i = 0; i < number_of_elements; i++)
    {
        if(arr[i] == item_to_find)
@@ -21,16 +22,21 @@ int array_search(T arr[], int number_of_elements, T item_to_find)
            return i;
        }
    }
-
    return -1;
 }
 
 int main(void)
 {
+    //For the size of the array//
+    int size;
+
+    //Position of the value//
+    int position;
+
     //Shows that Integer works//
     int data[] = {0, 1, 2, 3, 4};
-    int size = sizeof(data)/sizeof(data[0]);
-    int position = array_search(data, size, 4);
+    size = sizeof(data)/sizeof(data[0]);
+    position = array_search(data, size, 4);
     cout<<"In integer the position is : "<<position<<endl;
 
     //Shows for double//
@@ -50,11 +56,9 @@ int main(void)
     size = sizeof(com_data)/sizeof(com_data[0]);
     position = array_search(com_data, size, Complex(1,-1));
     cout<<"In char the position is: "<<position<<endl; 
-    
 
     return 0;
 }
-
 
 //Note to self://
 /*Why won't it work in string?

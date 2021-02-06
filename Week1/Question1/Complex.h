@@ -27,15 +27,6 @@ class Complex
 
         //Printer//
         void print();
-
-        //Adding//
-        Complex add(Complex);
-        //Substract//
-        Complex sub(Complex);
-        //Multiply//
-        Complex mult(Complex);
-        //Conjugate//
-        Complex conjugate();
         //Oveperator overloading//
         bool operator == (Complex const &obj);
 };
