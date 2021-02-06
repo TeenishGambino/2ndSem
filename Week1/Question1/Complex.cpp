@@ -105,6 +105,18 @@ Complex Complex::conjugate()
 
 Complex::~Complex()
 {
-    cout<<"Destructor"<<endl;
+    //cout<<"Destructor"<<endl;
 }
+
+bool Complex::operator == (Complex const &obj)
+        {
+            if ((real == obj.real)&&(imag == obj.imag))
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
 

@@ -36,4 +36,6 @@ class Complex
         Complex mult(Complex);
         //Conjugate//
         Complex conjugate();
+        //Oveperator overloading//
+        bool operator == (Complex const &obj);
 };

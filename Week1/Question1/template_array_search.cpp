@@ -25,17 +25,6 @@ int array_search(T arr[], int number_of_elements, T item_to_find)
    return -1;
 }
 
-//Won't work, because a pointer is passed//
-/*
-template<typename T>
-void sizer(T arr[])
-{
-    cout<<sizeof(arr);
-   // return (sizeof(arr)/sizeof(T)); //Why does (sizeof(arr)/sizeof(T)); not work?//
-}
-*/
-
-
 int main(void)
 {
     //Shows that Integer works//
@@ -55,6 +44,19 @@ int main(void)
     size = sizeof(c_data)/sizeof(c_data[0]);
     position = array_search(c_data, size, 'o');
     cout<<"In char the position is: "<<position<<endl;
+    
+    //For Complex//
+    Complex com_data[] = {Complex(1,-2), Complex(1,-1), Complex(6,9), Complex(-3,5)};
+    size = sizeof(com_data)/sizeof(com_data[0]);
+    position = array_search(com_data, size, Complex(1,-1));
+    cout<<"In char the position is: "<<position<<endl; 
+    
+
+    return 0;
+}
+
+
+//Note to self://
 /*Why won't it work in string?
     //Shows for string//
     string s_data[] = {"King", "Queen", "Rook", "Bishop", "Horse", "Pawn"};
@@ -63,11 +65,12 @@ int main(void)
     cout<<"In char the position is: "<<position<<endl;
 */ 
 
-    //For Complex//
-    Complex com_data[3];
-    com_data[0].setImag(1);
-    com_data[0].setReal(2);
-    
-
-    return 0;
+//Won't work, because a pointer is passed//
+/*
+template<typename T>
+void sizer(T arr[])
+{
+    cout<<sizeof(arr);
+   // return (sizeof(arr)/sizeof(T)); //Why does (sizeof(arr)/sizeof(T)); not work?//
 }
+*/
