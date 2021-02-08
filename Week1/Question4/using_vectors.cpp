@@ -34,10 +34,11 @@ int main(void)
     }
 
     //Printing words using index operator//
-    for(int i = 0; i < s_vector.size(); i++ )
+    for(int i = 0; i < (int)s_vector.size(); i++ )
     {
         cout<<s_vector[i]<<" "; 
     }
+    cout<<endl;
 
     //Printing words using iterator//
     for (it = s_vector.begin(); it != s_vector.end();++it)

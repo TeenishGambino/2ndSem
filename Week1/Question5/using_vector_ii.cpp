@@ -41,10 +41,10 @@ int main(void)
     s_vector[s_vector.size()-1] = "???";
 
     //Printing words using index operator//
-    for(int i = 0; i < s_vector.size(); i++ )
+    for(int i = 0; i < (int)s_vector.size(); i++ )
     {
         cout<<s_vector[i];
-        if(i != s_vector.size()-1) 
+        if(i != (int) s_vector.size()-1) 
         {
             cout<<",";
         }

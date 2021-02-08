@@ -30,3 +30,4 @@ class Complex
         //Oveperator overloading//
         bool operator == (Complex const &obj);
 };
+#include"Complex.cpp"
