@@ -52,7 +52,7 @@ int main(void)
     cout<<"In char the position is: "<<position<<endl;
     
     //For String//
-    string s_data[] = {string("King"), string("Queen"), string("Rook"), string("Bishop"), string("Horse"), string("Pawn")}
+    string s_data[] = {string("King"), string("Queen"), string("Rook"), string("Bishop"), string("Horse"), string("Pawn")};
     size = 6;
     position = array_search(s_data, size, string("Bishop"));
     cout<<"In string the position is: "<<position<<endl; 
