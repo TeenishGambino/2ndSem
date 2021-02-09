@@ -46,6 +46,7 @@ Stack<T>::Stack(int size)
 template<class T>
 bool Stack<T>::push (T element)
 {
+    //Making sure that the stack does not overflow//
     if (last_non_free_position+1 == size)
     {
         return false;	
@@ -58,6 +59,7 @@ bool Stack<T>::push (T element)
 template<class T>
 bool Stack<T>::pop(T& out)
 {
+    //Making sure that the stack is not empty//
     if (last_non_free_position == -1)
     {
         return false;
