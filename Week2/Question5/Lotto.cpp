@@ -1,6 +1,6 @@
 /*
 CH-231-A
-a2_p3.cpp
+a2_p5.cpp
 Abiral Banjade
 abanjade@jacobs-university.de
 */
@@ -48,7 +48,7 @@ int main(void)
         
         //Condition to check if the total is in the set or not//
         //if it is then we start from beginning//
-        if(const bool is_in = numbers.find(total) != numbers.end())
+        if(numbers.find(total) != numbers.end())
         {
             continue;
         }

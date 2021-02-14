@@ -102,5 +102,7 @@ int main(void)
     }
     cout<<endl;
 
+    output_file.close();
+
     return 0;
 }

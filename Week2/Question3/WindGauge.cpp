@@ -18,7 +18,7 @@ WindGauge::WindGauge(int period)
 
 void WindGauge::currentWindSpeed(int speed)
 {
-    if(wspeed.size() < wspeed_size)
+    if((int)wspeed.size() < wspeed_size)
     {
         wspeed.push_front(speed);
     }

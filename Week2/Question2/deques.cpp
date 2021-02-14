@@ -53,7 +53,7 @@ int main(void)
     //Incrementing so that we start with the second value//
     ++it;
 
-    for (it; it != A.end(); ++it)
+    for (; it != A.end(); ++it)
     {
         //Setting the current//
         current = *it;
