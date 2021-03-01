@@ -183,9 +183,6 @@ int main()
             //values[i] = size - i;
             arr[i] = size - i;
         }
-
-       
-
         //Worst case is when the array values are decreasing,
         //and we are using insertion sort n/k = 1//
         //print(arr, size);
