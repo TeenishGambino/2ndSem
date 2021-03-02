@@ -135,7 +135,6 @@ int * array_worst(int size)
 int * array_gen(int size)
 {
     int *arr = new int[size];
-    int temp;
     for(int i = 0; i < size; i++)
     {  
         arr[i] = random_number(size);
@@ -152,16 +151,11 @@ int main()
     ofstream av_f;
     av_f.open("average.txt");
 
-    double average;
-    double sum = 0;
     int size = 1000;
-    int * values;
     int arr[size];
 
     for(int k = 0; k < size; k = k + 10)
     {
-        double sum = 0;
-        int number_of_cases = 5;
         //For average case//
 
         srand(time(NULL));
