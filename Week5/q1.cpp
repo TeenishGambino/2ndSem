@@ -26,7 +26,7 @@ unsigned long long int recursive_fib(unsigned long long int n);
 unsigned long long int bottom_fib(unsigned long long int n);
 //Closed Form//
 double closed_fib(int n);
-int conv_closed_fib(int n); //coverts double to int//
+unsigned long long int conv_closed_fib(int n); //coverts double to int//
 
 /*Matrix implementation*/
 //Multiplication//
@@ -60,58 +60,58 @@ int main(void)
     int size = sizeof(N)/sizeof(N[0]);
     //cout<<size<<endl;
 
-    // ofstream naive;
-    // naive.open("Naive.txt");
+    ofstream naive;
+    naive.open("Naive.txt");
     
-    // do
-    // {
-    //     input = pow(i, power);
-    //     auto start = high_resolution_clock::now();
-    //     recursive_fib(input);
-    //     auto stop = high_resolution_clock::now();
-    //     auto change= duration_cast<microseconds>(stop-start);
-    //     time = (double)change.count();
-    //     if(time<t_limit)
-    //         naive<<input<< " "<<time<<endl;
-    //     ++i;
-    // }while(time < t_limit);
+    do
+    {
+        input = pow(i, power);
+        auto start = high_resolution_clock::now();
+        recursive_fib(input);
+        auto stop = high_resolution_clock::now();
+        auto change= duration_cast<microseconds>(stop-start);
+        time = (double)change.count();
+        if(time<t_limit)
+            naive<<input<< " "<<time<<endl;
+        ++i;
+    }while(time < t_limit);
 
-    // naive.close();
+    naive.close();
 
-    // ofstream bottom;
-    // bottom.open("Bottom.txt");
-    // i = 0;
+    ofstream bottom;
+    bottom.open("Bottom.txt");
+    i = 0;
 
-    // do
-    // {
-    //     input = pow(i, power);
-    //     auto start = high_resolution_clock::now();
-    //     bottom_fib(input);
-    //     auto stop = high_resolution_clock::now();
-    //     auto change= duration_cast<microseconds>(stop-start);
-    //     time = (double)change.count();
-    //     if(time<t_limit)
-    //         bottom<<input<< " "<<time<<endl;
-    //     ++i;
-    // }while(time < t_limit);
+    do
+    {
+        input = pow(i, power);
+        auto start = high_resolution_clock::now();
+        bottom_fib(input);
+        auto stop = high_resolution_clock::now();
+        auto change= duration_cast<microseconds>(stop-start);
+        time = (double)change.count();
+        if(time<t_limit)
+            bottom<<input<< " "<<time<<endl;
+        ++i;
+    }while(time < t_limit);
 
-    //bottom.close();
-    // ofstream phi;
-    // phi.open("Closed.txt");
-    // i = 0;
-    // do
-    // {
-    //     input = pow(i, power);
-    //     auto start = high_resolution_clock::now();
-    //     closed_fib(input);
-    //     auto stop = high_resolution_clock::now();
-    //     auto change= duration_cast<microseconds>(stop-start);
-    //     time = (double)change.count();
-    //     phi<<input<< " "<<time<<endl;
-    //     ++i;
-    // }while(time < t_limit);
+    bottom.close();
+    ofstream phi;
+    phi.open("Closed.txt");
+    i = 0;
+    do
+    {
+        input = pow(i, power);
+        auto start = high_resolution_clock::now();
+        closed_fib(input);
+        auto stop = high_resolution_clock::now();
+        auto change= duration_cast<microseconds>(stop-start);
+        time = (double)change.count();
+        phi<<input<< " "<<time<<endl;
+        ++i;
+    }while(time < t_limit);
 
-    // phi.close();
+    phi.close();
     ofstream matrix;
     matrix.open("Matrix.txt");
     i=0;
@@ -175,7 +175,7 @@ double closed_fib(int n){
     }
 }
 
-int conv_closed_fib(int n){
+unsigned long long int conv_closed_fib(int n){
     double value = closed_fib(n);
     return round(value);
 }
