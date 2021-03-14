@@ -36,32 +36,9 @@ int main(void){
     bottom.open("Bottom.txt");
     ofstream regular;
     regular.open("Regular.txt");
-    /*ofstream bottomw;
-    bottomw.open("Bottom_worst.txt");
-    ofstream regularw;
-    regularw.open("Regular_worst.txt");*/
 
     for(int k = 0; k < size; k = k + 10)
     {
-        /*
-        //For best case//
-        for (int i = 0; i < size; i++)
-        {
-            arr[i] = k
-            arr2[i] = arr[i];
-        }
-
-        auto start_regular_best = high_resolution_clock::now();
-        HeapSort(arr, k);
-        auto stop_regular_best = high_resolution_clock::now();
-        auto time_regular_best = duration_cast<microseconds>(stop_regular_best-start_regular_best);
-
-        auto start_bottom_best = high_resolution_clock::now();
-        BottomUpHeapSort(arr2, k);
-        auto stop_bottom_best = high_resolution_clock::now();
-        auto time_bottom_best = duration_cast<microseconds>(stop_bottom_best-start_bottom_best);
-        */
-
         srand(time(NULL));
         for (int i = 0; i < size; i++)
         {
@@ -87,27 +64,6 @@ int main(void){
     regular.close();
     bottom.close();
 
-
-    /*
-    int arr[] = {16,14,10,8,7,9,3,2,4,1};
-    int size = sizeof(arr)/sizeof(arr[0]);
-
-    cout<<"Originally"<<endl;
-    printer(arr, size);
-
-    cout<<"After Heap Sort"<<endl;
-    HeapSort(arr, size);
-    printer(arr, size);
-
-    int arr2[] = {16,14,10,8,7,9,3,2,4,1};
-
-    cout<<"Originally"<<endl;
-    printer(arr2, size);
-
-    cout<<"After Heap Sort"<<endl;
-    BottomUpHeapSort(arr2, size);
-    printer(arr2, size);*/
-
 }
 
 void HeapSort(int arr[], int size){
@@ -125,7 +81,7 @@ void HeapSort(int arr[], int size){
 
 //Builds Heap//
 void BuildMaxHeap(int arr[], int size){
-    int length = size;
+    //int length = size;
 
     for(int i = size/2; i >= 0;i--){
         MaxHeapify(arr, i, size);
