@@ -64,7 +64,7 @@ int main(void){
     //int * arr3 = new int[size];
 
     for (int i = 0; i < 10000; ++i){
-        arr = array_gen(10000);
+        arr = array_gen(1000);
         for(int j = 0; j < size; ++j){
             //cout<<arr[j]<<" ";
             arr1[j] = arr[j];
