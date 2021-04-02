@@ -23,7 +23,6 @@ void countSort(string arr[], int size, int pos){
     int max = 129;
     string temp[size];
     int C[max];
-    //out<<arr[0]<<endl;
     for (int i = 0; i < max; i++){
         C[i] = 0;
     }
@@ -50,13 +49,9 @@ void countSort(string arr[], int size, int pos){
             C[0]--;
         }
     }
-    //cout<<temp[0]<<endl;
     for(int i = 0; i < size; i++){
-        //cout<<temp[0]<<endl;
         arr[i] = temp[i];
     }
-
-    //delete[] C;
 }
 
 void radixSort(string arr[], int size){
