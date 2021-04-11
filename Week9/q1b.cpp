@@ -56,8 +56,6 @@ T Stack<T>::pop(){
         cout<<"Stack Underflow"<<endl;
         exit(1);
     }
-
-
     T odata = top->data;
     StackNode * cursor = top;
     if(current_size == 1){

@@ -38,14 +38,12 @@ Stack<T>::Stack(int new_size){
     this->top = NULL;
 }
 
-
 template<class T>
 bool Stack<T>::isEmpty(){
     if (current_size == 0)
         return true;
     else
         return false;
-
 }
 
 template<class T>
@@ -54,7 +52,6 @@ T Stack<T>::pop(){
         cout<<"Stack Underflow"<<endl;
         exit(1);
     }
-
 
     T odata = top->data;
     StackNode * cursor = top;
@@ -100,6 +97,5 @@ int main(void){
     for(int i = 0; i < 5; i++){
         cout<<S.pop()<<endl;
     }
-    
     return 0;
 }
