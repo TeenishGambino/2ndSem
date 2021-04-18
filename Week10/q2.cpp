@@ -14,8 +14,11 @@ int main(){
     RBTree tree;
     
     tree.insertRB(10);
+    tree.print();
     tree.insertRB(420);
+    tree.print();
     tree.insertRB(39);
+    tree.print();
     tree.insertRB(4);
     tree.insertRB(26);
     tree.insertRB(14);
