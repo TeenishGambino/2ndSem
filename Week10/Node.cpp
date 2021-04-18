@@ -76,51 +76,6 @@ void RBTree::insertRB(int data){
     
 }
 
-/*void RBTree::RBFixup(Node * z){
-    Node * parent = NULL;
-    Node * grandparent = NULL;
-    
-        while(z->parent != NULL && z->parent->color == RED){
-            //cout<<"AAA"<<endl;
-            grandparent = z->parent->parent;
-            if(parent == grandparent->left){
-                Node * uncle = grandparent->right; //uncle//
-                if(uncle->color == RED && uncle != NULL){
-                    z->parent->color = BLACK;
-                    uncle->color = BLACK;
-                    z->parent->parent->color = RED;
-                    z = z->parent->parent;
-                }else{
-                    if(z == z->parent->right){
-                        z = z->parent;
-                        rotateLeft(z);
-                    }
-                    z->parent->color = BLACK;
-                    z->parent->parent->color = RED;
-                    rotateRight(grandparent);
-                }
-            }else{
-                grandparent = z->parent->parent;
-                Node * uncle = grandparent->left;
-                if(uncle != NULL && uncle->color == RED){
-                    z->parent->color = BLACK;
-                    uncle->color = BLACK;
-                    z->parent->parent->color = RED;
-                    z = z->parent->parent;
-                }else{
-                    if(z == z->parent->left){
-                        z = parent;
-                        rotateRight(z);
-                    }
-                    z->parent->color = BLACK;
-                    z->parent->parent->color = RED;
-                    rotateLeft(grandparent);
-                }
-            }
-        }
-    root->color = BLACK;
-}*/
-
 void RBTree::RBFixup(Node *&z)
 {
     while (z->parent != NULL && z->parent->color == RED){
@@ -156,7 +111,7 @@ void RBTree::RBFixup(Node *&z)
                 }
                 z->parent->color = BLACK;
                 z->parent->parent->color = RED;
-                rotateLeft(grandparent); //error occurs when i dont do this
+                rotateLeft(grandparent);
                 }
             }
         }
