@@ -1,25 +1,11 @@
 #include<iostream>
+using namespace std;
 enum Color {RED, BLACK};
-class Node{
-    public:
-        int data;
-        Node * left; 
-        Node * right;
-        Node * parent;
-        Color color; //0->black, 1->red//
-    Node(int data){
-        this->data = data;
-        this->right = nullptr;
-        this->left = nullptr;
-        this->color = RED;
-    }
-    void setColor(Color color){
-        this->color = color;
-    }
+struct Node{
+    int data;
+    Color color;
+    Node * left, *right, *parent;
 };
-
-Node Sentinal(0);
-//Sentinal.setColor(1);
 
 class RBTree{
     private:
@@ -31,8 +17,11 @@ class RBTree{
         Node * minimum(Node *);
         Node * doSearch(Node *, int);
         void Transplant(Node *, Node *);
-        void RBFixup(Node *);
+        void RBFixup(Node *&);
         void RB_D_Fixup(Node *);
+        void Printer(Node *);
+        Node * BSTinsert(Node *& , Node *&);
+        bool isRed(Node *);
 
     public:
         RBTree();
@@ -43,5 +32,6 @@ class RBTree{
         Node * getMinimum();
         Node * getMaximum();
         Node * search(int);
+        void print();
 }; 
 
