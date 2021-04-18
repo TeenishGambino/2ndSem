@@ -9,8 +9,8 @@ class Node{
         Color color; //0->black, 1->red//
     Node(int data){
         this->data = data;
-        this->right = NULL;
-        this->left = NULL;
+        this->right = nullptr;
+        this->left = nullptr;
         this->color = RED;
     }
     void setColor(Color color){
@@ -25,12 +25,19 @@ class RBTree{
     private:
         Node * root;
     protected:
-        void rotateLeft(Node *);
-        void rotateRight(Node *);
+        void rotateLeft(Node *&);
+        void rotateRight(Node *&);
+        Node * maximum(Node *);
+        Node * minimum(Node *);
+        Node * doSearch(Node *, int);
+        void Transplant(Node *, Node *);
+        void RBFixup(Node *);
+        void RB_D_Fixup(Node *);
+
     public:
         RBTree();
         void insertRB(int);
-        void deleteRB(int);
+        void deleteRB(Node *&);
         Node * predecessor(const Node *&);
         Node * successor(const Node *&);
         Node * getMinimum();
