@@ -28,18 +28,62 @@ class HashTable{
         int currentSize;
     public:
         HashTable(){
-            maxSize = 100; //change it//
+            maxSize = 500; //change it//
             currentSize = 0;
             arr = new Node *[maxSize];
             for(int i = 0; i < maxSize; i++){
                 arr[i] = NULL;
             }
         }
-        void hashCode(int key);
-        void insertNode(int key, int value);
-        int get(int key);
+        int hashCode(int key){
+                return key % maxSize;
+            }
+        void insertNode(int key, int value){
+            if(currentSize >= maxSize){
+                cout<<"Hash table full"<<endl;
+                exit(1);
+            }
+
+            int index;
+            int copy_index;
+            int i = 0;
+
+            while (1)
+            {
+                index = hashCode(key+i);
+                if(index >= maxSize){
+                    index = 0;
+                }
+                if(arr[index] == NULL){
+                    Node * newelm = new Node(key, value);
+                    arr[index] = newelm;
+                    currentSize++;
+                    return;
+                }else{
+                    i++;
+                }
+            }
+        }
+
+        int get(int key){
+            if(isEmpty()){
+                cout<<"Hash table empty"<<endl;
+                return -1;
+            }
+            int i = 0;
+            while(i<maxSize){
+                int index = hashCode(key+i);
+                if(arr[index]->key == key){
+                    return arr[index]->value;
+                }else{
+                    i++;
+                }
+            }
+
+            return -1;
+        }
         bool isEmpty(){
-            if(currentSize == maxSize){
+            if(currentSize == 0){
                 return true;
             }else{
                 return false;
@@ -49,6 +93,14 @@ class HashTable{
 };
 
 int main(){
+    HashTable H;
+    for(int i = 0; i < 100; i++){
+        H.insertNode((i*i)/2, i);
+    }
+
+    for(int i = 0; i < 100; i++){
+        cout<<H.get((i*i)/2)<<endl;
+    }
 
     return 0;
 }
