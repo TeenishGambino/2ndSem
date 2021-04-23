@@ -28,7 +28,7 @@ class HashTable{
         int currentSize;
     public:
         HashTable(){
-            maxSize = 500; //change it//
+            maxSize = 500; 
             currentSize = 0;
             arr = new Node *[maxSize];
             for(int i = 0; i < maxSize; i++){
@@ -45,7 +45,6 @@ class HashTable{
             }
 
             int index;
-            int copy_index;
             int i = 0;
 
             while (1)
