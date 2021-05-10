@@ -28,9 +28,11 @@ void countSort(string arr[], int size, int pos){
     }
 
     for(int i = 0; i < size; i++){
+        //Checking if the string is less than the pos//
         if(pos < (int)arr[i].size())
             C[arr[i][pos]+1]++;
         else
+        //If string is not as long as pos//
             C[0]++;
     }
 
@@ -56,6 +58,7 @@ void countSort(string arr[], int size, int pos){
 
 void radixSort(string arr[], int size){
     int max_length = 0;
+    //maxlength of the string in arr//
     for(int i =0; i < size; ++i){
         if((int)arr[i].size() > max_length){
             max_length = arr[i].size();
@@ -63,7 +66,7 @@ void radixSort(string arr[], int size){
     }
     //cout<<max_length<<endl;
     for(int i = max_length-1; i >=0; i--){
-        
+        //We are starting with the largest position//
         countSort(arr,size, i);
     }
 }
