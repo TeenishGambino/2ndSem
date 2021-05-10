@@ -20,7 +20,7 @@ template<typename T>
 void printer(T[], int );
 
 void countSort(string arr[], int size, int pos){
-    int max = 129;
+    int max = 129; //Ascii 128, and we need to store the 128, hence 128+1//
     string temp[size];
     int C[max];
     for (int i = 0; i < max; i++){
